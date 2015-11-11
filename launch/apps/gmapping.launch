@@ -3,7 +3,8 @@
 	  <rosparam file="$(find pioneer3at)/config/gmapping/gmapping.yaml" command="load" />
 	  
 	  <remap from="scan"          to="/Pioneer3AT/laserscan"/>
-	  <remap from="map"           to="/Pioneer3AT/map"/>
+	  <remap from="odom"          to="/Pioneer3AT/pose"/>
+	  <!-- <remap from="map"           to="/Pioneer3AT/map"/> -->
 	  <remap from="map_metadata"  to="/Pioneer3AT/map_metadata"/>
 	</node>
 </launch>

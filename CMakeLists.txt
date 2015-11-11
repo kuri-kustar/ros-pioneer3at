@@ -57,6 +57,12 @@ target_link_libraries(gazebo_laserscan  ${catkin_LIBRARIES}
                                         ${Boost_LIBRARIES} 
                                         ${PROTOBUF_LIBRARIES})
 
+add_executable(		navigation_goals src/navigation_goals.cpp)
+target_link_libraries(navigation_goals ${catkin_LIBRARIES}
+					${GAZEBO_LIBRARIES} 
+                                        ${Boost_LIBRARIES} 
+                                        ${PROTOBUF_LIBRARIES})
+
 #############
 ## Install ##
 #############
@@ -78,6 +84,7 @@ install(PROGRAMS  scripts/init_amcl
 install(TARGETS joint_state_publisher
                 gazebo_bridge
                 gazebo_laserscan
+		navigation_goals
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
